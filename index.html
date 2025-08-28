@@ -2,43 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="todo-container">
-        <h1>TODO LIST</h1>
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add a new task....." required />
-            <input type="date" id="date-input" required />
-            <button type="submit" class="add-btn">+</button>
-        </form>
-        <div class="controls">
-            <input type="text" id="filter-input" placeholder="Filter...">
-            <button id="delete-all" class="delete-all-btn">DELETE ALL</button>
-        </div>
+<body class="bg-pink-400 text-white font-sans flex justify-center items-center p-10">
+  <div class="bg-pink-600 p-8 rounded-3xl w-full max-w-6xl">
+    <h1 class="text-center mb-5 px-24 py-2 text-indigo-200 text-3xl font-bold">TODO LIST</h1>
 
-        <table class="todo-table">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="todo-body">
-                <tr>
-                    <td colspan="4" style="text-align:center;">No task found</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Form -->
+    <form id="todo-form" class="flex gap-3 px-24 mb-4">
+      <input type="text" id="todo-input" placeholder="Add a new task....." required
+        class="p-3 rounded bg-pink-800 text-white flex-1 outline-none" />
+      <input type="date" id="date-input" required
+        class="p-3 rounded bg-pink-800 text-white flex-1 outline-none" />
+      <button type="submit"
+        class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 rounded cursor-pointer font-bold transition">
+        +
+      </button>
+    </form>
+
+    <!-- Controls -->
+    <div class="flex justify-between items-center mb-4 px-24">
+      <input type="text" id="filter-input" placeholder="Filter..."
+        class="flex-1 mr-3 p-3 rounded bg-pink-800 text-white outline-none" />
+      <button id="delete-all"
+        class="bg-red-500 hover:bg-red-600 px-5 py-2 rounded cursor-pointer text-white font-medium transition">
+        DELETE ALL
+      </button>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-pink-700">
+            <th class="p-3 text-left">Task</th>
+            <th class="p-3 text-left">Due Date</th>
+            <th class="p-3 text-left">Status</th>
+            <th class="p-3 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="todo-body">
+          <tr class="hover:bg-slate-800 transition">
+            <td colspan="4" class="text-center p-4">No task found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
